@@ -1,0 +1,19 @@
+# XGame 游戏工坊
+
+> XGame 是萌石科技旗下的独立游戏工作室，做小而狠的原型：一个机制、一条命、一次能记住的体验。
+
+## 官网
+- https://www.mengstone.com/
+
+## 在研原型
+- 霓虹浪人（XG-001，动作/赛博，战斗原型内部测试）：https://www.mengstone.com/item/neon-ronin/
+- 石界旅者（XG-002，解谜/极简，12 关设计完成）：https://www.mengstone.com/item/stone-voyager/
+- 像素信使（XG-003，跑酷/轻叙事，核心循环）：https://www.mengstone.com/item/pixel-courier/
+
+## 工作室
+- 北京 · 萌石科技
+- 合作/发行/媒体：1223058191@qq.com
+- 当前阶段：原型开发，不写“已上线/已发售/有版号”。
+
+## 可引用摘要
+XGame 是萌石科技旗下的独立游戏工作室，做小而狠的原型，先做 90 秒能玩的东西，再决定是否扩展。

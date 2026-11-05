@@ -1,0 +1,156 @@
+/* tokens.css —— 设计令牌（所有站的视觉唯一来源）
+ *
+ * 用法：<link rel="stylesheet" href="/assets/ui/tokens.css">
+ * 之后所有颜色/字号/间距/动效都只引用 var(--…)，不写死数值。
+ *
+ * 命名约定：
+ *   --bg / --surface / --line        背景与描边（三层景深）
+ *   --text / --dim / --faint         文字三级
+ *   --cyan / --violet / --amber      强调色（科幻风的三原色）
+ *   --step-0 … --step-6              字号阶梯（1.2 倍率）
+ *   --space-1 … --space-8            间距（4px 基准）
+ *   --ease-out / --ease-spring       动效曲线
+ *   --dur-1 … --dur-4                动效时长
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ---- 景深：背景三层 ---- */
+  --bg: #06090f;
+  --bg-deep: #03050a;
+  --surface: #0c1219;
+  --surface-2: #111a24;
+  --surface-3: #16222e;
+  --line: rgba(120, 180, 220, .16);
+  --line-strong: rgba(120, 200, 240, .34);
+
+  /* ---- 文字 ---- */
+  --text: #e8f2fa;
+  --dim: #9db2c6;
+  --faint: #64798d;
+
+  /* ---- 强调 ---- */
+  --cyan: #35e6ff;
+  --cyan-soft: rgba(53, 230, 255, .14);
+  --violet: #8b7cff;
+  --amber: #ffb648;
+  --rose: #ff6b8a;
+  --green: #38e2a0;
+
+  /* ---- 字号阶梯（1.2） ---- */
+  --step--1: clamp(12.5px, .78vw, 13.5px);
+  --step-0: clamp(14.5px, .92vw, 16px);
+  --step-1: clamp(16.5px, 1.1vw, 18.5px);
+  --step-2: clamp(20px, 1.5vw, 24px);
+  --step-3: clamp(25px, 2.2vw, 33px);
+  --step-4: clamp(32px, 3.2vw, 46px);
+  --step-5: clamp(42px, 5vw, 68px);
+  --step-6: clamp(54px, 7.4vw, 104px);
+
+  /* ---- 间距 ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 112px;
+
+  /* ---- 圆角 / 阴影 ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+  --shadow-1: 0 2px 10px rgba(0, 0, 0, .35);
+  --shadow-2: 0 14px 40px rgba(0, 0, 0, .45);
+  --glow-cyan: 0 0 24px rgba(53, 230, 255, .28);
+  --glow-violet: 0 0 28px rgba(139, 124, 255, .26);
+
+  /* ---- 字体 ---- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  /* 中文不要用 mono（会掉字形）；mono 只给数字与代码 */
+
+  /* ---- 动效 ---- */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 420ms;
+  --dur-4: 720ms;
+
+  /* ---- 布局 ---- */
+  --wrap: 1180px;
+  --wrap-narrow: 760px;
+  --nav-h: 62px;
+}
+
+/* ============================================================
+ * 浅色主题：[data-theme="light"]
+ * 由 ui/theme.js 写在 <html data-theme="light">；不写则跟随系统。
+ * 所有对比度已核算（正文 17.75:1 / 次要 7.75:1 / 弱 4.51:1 / 强调 6.28:1）。
+ * ============================================================ */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f9fc;
+  --bg-deep: #eef2f7;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --surface-3: #e3e9f1;
+  --line: rgba(15, 40, 70, .14);
+  --line-strong: rgba(15, 40, 70, .28);
+
+  --text: #0b1220;
+  --dim: #3f5163;
+  --faint: #64748b;
+
+  --cyan: #12657a;
+  --cyan-soft: rgba(18, 101, 122, .10);
+  --violet: #5b4bb8;
+  --amber: #8a5a00;
+  --rose: #b3243f;
+  --green: #0f6b46;
+
+  --shadow-1: 0 2px 10px rgba(15, 40, 70, .08);
+  --shadow-2: 0 14px 40px rgba(15, 40, 70, .12);
+  --glow-cyan: 0 0 24px rgba(18, 101, 122, .18);
+  --glow-violet: 0 0 28px rgba(91, 75, 184, .16);
+}
+
+/* 浅色下这些装饰要收着点，不然白底上很脏 */
+[data-theme="light"] #starfield { opacity: .18; }
+[data-theme="light"] .card {
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 40, 70, .05);
+}
+[data-theme="light"] .card::before { opacity: 0; }
+[data-theme="light"] .card:hover { box-shadow: var(--shadow-2); }
+[data-theme="light"] .btn--solid {
+  --btn-bg: linear-gradient(135deg, #12657a, #1a8ba6);
+  --btn-fg: #ffffff;
+  box-shadow: 0 6px 18px rgba(18, 101, 122, .22);
+}
+[data-theme="light"] .badge { background: rgba(15, 40, 70, .04); }
+[data-theme="light"] #spotlight { display: none; }
+
+/* 尊重系统设置：关掉动效时，所有过渡与动画立即失效 */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 1ms;
+    --dur-2: 1ms;
+    --dur-3: 1ms;
+    --dur-4: 1ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

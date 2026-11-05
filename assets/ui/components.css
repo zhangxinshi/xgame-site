@@ -1,0 +1,162 @@
+/* components.css —— 组件库（依赖 tokens.css + base.css）
+ *
+ * 覆盖：Toast / Modal / Tabs / 表单控件 / 空态 / 错误态 / 骨架屏 / 表格 / 分页 / 面包屑 / 提示
+ * 原则：键盘可达、焦点可见、动效可关、无外部依赖。
+ */
+
+/* ---------------------------------------------------------------- Toast */
+.toast-stack {
+  position: fixed; left: 50%; bottom: var(--space-6); transform: translateX(-50%);
+  z-index: 10020; display: flex; flex-direction: column; gap: var(--space-2);
+  align-items: center; pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 10px 16px; border-radius: var(--r-pill);
+  background: color-mix(in oklab, var(--surface-2) 92%, black);
+  border: 1px solid var(--line-strong); color: var(--text);
+  font-size: var(--step--1); box-shadow: var(--shadow-2);
+  transform: translateY(10px); opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+.toast.is-in { opacity: 1; transform: none; }
+.toast--ok { border-color: rgba(56, 226, 160, .5); }
+.toast--ok::before { content: "✓"; color: var(--green); font-weight: 700; }
+.toast--err { border-color: rgba(255, 107, 138, .5); }
+.toast--err::before { content: "!"; color: var(--rose); font-weight: 700; }
+
+/* ---------------------------------------------------------------- Modal */
+.modal {
+  position: fixed; inset: 0; z-index: 10030;
+  display: grid; place-items: center; padding: var(--space-4);
+  background: rgba(2, 5, 10, .72);
+  backdrop-filter: blur(6px);
+  opacity: 0; transition: opacity var(--dur-2) var(--ease-out);
+}
+.modal[hidden] { display: none; }
+.modal.is-in { opacity: 1; }
+.modal__panel {
+  width: min(560px, 100%); max-height: 86vh; overflow: auto;
+  background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg); padding: var(--space-6);
+  box-shadow: var(--shadow-2);
+  transform: translateY(12px) scale(.985);
+  transition: transform var(--dur-3) var(--ease-spring);
+}
+.modal.is-in .modal__panel { transform: none; }
+.modal__close {
+  position: absolute; top: 10px; right: 12px;
+  border: 0; background: transparent; color: var(--faint);
+  font-size: 22px; line-height: 1; cursor: pointer; padding: 6px 10px; border-radius: var(--r-sm);
+}
+.modal__close:hover { color: var(--text); background: var(--surface-2); }
+.modal__actions { display: flex; gap: var(--space-3); justify-content: flex-end; margin-top: var(--space-5); }
+
+/* ---------------------------------------------------------------- Tabs */
+.tabs { display: flex; gap: var(--space-1); border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tab {
+  border: 0; background: transparent; color: var(--dim);
+  padding: 10px 14px; font: 600 var(--step--1)/1 var(--font-sans);
+  cursor: pointer; position: relative; white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out);
+}
+.tab:hover { color: var(--text); }
+.tab[aria-selected="true"] { color: var(--text); border-bottom-color: var(--cyan); }
+.tabpanel[hidden] { display: none; }
+.tabpanel { padding-top: var(--space-5); }
+
+/* ---------------------------------------------------------------- 表单 */
+.field { display: grid; gap: 6px; margin-bottom: var(--space-4); }
+.field > label { font-size: var(--step--1); color: var(--dim); font-weight: 600; }
+.field__hint { font-size: var(--step--1); color: var(--faint); }
+.field__err { font-size: var(--step--1); color: var(--rose); display: none; }
+.field.is-invalid .field__err { display: block; }
+.field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea { border-color: rgba(255,107,138,.6); }
+
+.input, .select, .textarea {
+  width: 100%; padding: 10px 12px;
+  background: var(--bg-deep); color: var(--text);
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  font: var(--step-0)/1.5 var(--font-sans);
+  transition: border-color var(--dur-2) var(--ease-out), box-shadow var(--dur-2) var(--ease-out);
+}
+.input:focus, .select:focus, .textarea:focus {
+  outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px var(--cyan-soft);
+}
+.textarea { min-height: 96px; resize: vertical; }
+.check { display: flex; align-items: flex-start; gap: 10px; font-size: var(--step--1); color: var(--dim); }
+.check input { margin-top: 3px; accent-color: var(--cyan); }
+
+/* ---------------------------------------------------------------- 空态 / 错误态 */
+.state {
+  text-align: center; padding: var(--space-7) var(--space-4);
+  border: 1px dashed var(--line); border-radius: var(--r-lg); color: var(--dim);
+}
+.state__icon { font-size: 30px; opacity: .6; margin-bottom: var(--space-3); }
+.state__title { color: var(--text); font-weight: 700; margin-bottom: 6px; }
+.state--error { border-color: rgba(255,107,138,.35); }
+.state--error .state__title { color: var(--rose); }
+
+/* ---------------------------------------------------------------- 骨架屏 */
+.skeleton {
+  border-radius: var(--r-md);
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 37%, var(--surface) 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s var(--ease-in-out) infinite;
+  min-height: 14px;
+}
+@keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; background: var(--surface-2); }
+}
+
+/* ---------------------------------------------------------------- 表格 */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); }
+.table { width: 100%; border-collapse: collapse; font-size: var(--step--1); }
+.table th, .table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+.table th { color: var(--faint); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-family: var(--font-mono); font-size: 11px; }
+.table tbody tr:hover { background: rgba(53, 230, 255, .04); }
+.table td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------- 分页 */
+.pager { display: flex; gap: var(--space-2); align-items: center; justify-content: center; margin-top: var(--space-6); flex-wrap: wrap; }
+.pager a, .pager span {
+  min-width: 38px; text-align: center; padding: 8px 10px;
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+  color: var(--dim); font-size: var(--step--1);
+}
+.pager a:hover { border-color: var(--cyan); color: var(--text); text-decoration: none; }
+.pager [aria-current="page"] { border-color: var(--cyan); color: var(--text); background: var(--cyan-soft); }
+
+/* ---------------------------------------------------------------- 面包屑 */
+.crumbs { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: var(--step--1); color: var(--faint); }
+.crumbs a { color: var(--dim); }
+.crumbs a:hover { color: var(--text); }
+.crumbs span[aria-hidden] { opacity: .5; }
+
+/* ---------------------------------------------------------------- 提示气泡（纯 CSS） */
+.tip { position: relative; border-bottom: 1px dashed var(--line-strong); cursor: help; }
+.tip::after {
+  content: attr(data-tip);
+  position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%) translateY(4px);
+  background: var(--surface-3); color: var(--text); border: 1px solid var(--line-strong);
+  padding: 6px 10px; border-radius: var(--r-sm); font-size: var(--step--1); white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+  z-index: 20;
+}
+.tip:hover::after, .tip:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---------------------------------------------------------------- 复制按钮 */
+.copy-btn { display: inline-flex; align-items: center; gap: 6px; }
+.copy-btn.is-done { color: var(--green); border-color: rgba(56,226,160,.55); }
+
+/* ---------------------------------------------------------------- 列表卡（详情/列表通用） */
+.item {
+  display: grid; gap: 6px; padding: var(--space-4);
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--surface); transition: border-color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+.item:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.item__meta { display: flex; gap: var(--space-3); flex-wrap: wrap; color: var(--faint); font-size: var(--step--1); }
