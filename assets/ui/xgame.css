@@ -133,6 +133,8 @@ body:not(.x-body) a{color:var(--x-acid)}
 .x-shotwall{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:36px 0 0;border-block:1px solid var(--x-line)}
 .x-shotwall img{width:100%;height:230px;object-fit:cover;filter:saturate(.9) contrast(1.05)}
 .x-pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--x-line);border:1px solid var(--x-line)}
+.x-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:36px 0 10px}
+.x-gallery img{width:100%;height:230px;object-fit:cover;border:1px solid var(--x-line)}
 .x-pipe div{background:var(--x-bg);padding:22px 18px;min-height:150px}
 .x-pipe b{font-family:var(--x-mono);font-size:28px;color:var(--x-acid);display:block;margin-bottom:18px}
 .x-pipe span{display:block;font-weight:800;font-size:16px;margin-bottom:6px}
