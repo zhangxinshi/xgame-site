@@ -123,3 +123,9 @@ body:not(.x-body) .wrap{width:min(1000px,calc(100% - 40px))}
 body:not(.x-body) .footer{border-top:1px solid var(--x-line);color:var(--x-dim)}
 body:not(.x-body) .faint,body:not(.x-body) .muted{color:var(--x-dim)}
 body:not(.x-body) a{color:var(--x-acid)}
+
+
+# xgame upgrade additions
+.x-cover{display:block;width:calc(100% + 40px);height:168px;object-fit:cover;margin:-20px -20px 16px;filter:saturate(1.05) contrast(1.05)}
+.x-links-list div{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--x-line)}
+.x-links-list div small{font-family:var(--x-mono);font-size:10px;color:var(--x-acid);letter-spacing:.1em}
