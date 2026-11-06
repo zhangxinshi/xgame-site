@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.mengstone.com/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/list/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/about/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/privacy/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/terms/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/refund/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/item/neon-ronin/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/item/stone-voyager/</loc><lastmod>2026-11-05</lastmod></url>
-  <url><loc>https://www.mengstone.com/item/pixel-courier/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://www.mengstone.com/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/list/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/about/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/privacy/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/terms/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/refund/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/item/neon-ronin/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/item/stone-voyager/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/item/pixel-courier/</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://www.mengstone.com/en/</loc></url>
+  <url><loc>https://www.mengstone.com/en/about/</loc></url>
+  <url><loc>https://www.mengstone.com/en/item/neon-ronin/</loc></url>
+  <url><loc>https://www.mengstone.com/en/item/pixel-courier/</loc></url>
+  <url><loc>https://www.mengstone.com/en/item/stone-voyager/</loc></url>
+  <url><loc>https://www.mengstone.com/en/privacy/</loc></url>
+  <url><loc>https://www.mengstone.com/en/privacy/neon-ronin/</loc></url>
+  <url><loc>https://www.mengstone.com/en/privacy/pixel-courier/</loc></url>
+  <url><loc>https://www.mengstone.com/en/privacy/stone-voyager/</loc></url>
+  <url><loc>https://www.mengstone.com/privacy/neon-ronin/</loc></url>
+  <url><loc>https://www.mengstone.com/privacy/pixel-courier/</loc></url>
+  <url><loc>https://www.mengstone.com/privacy/stone-voyager/</loc></url>
 </urlset>
