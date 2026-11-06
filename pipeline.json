@@ -1,0 +1,38 @@
+{
+  "site": "https://www.mengstone.com/",
+  "press": "https://www.mengstone.com/press/",
+  "updated": "2026-11-06",
+  "stage": "store-review-ready",
+  "games": [
+    {
+      "slug": "siege-prodigy",
+      "name": "攻城奇才",
+      "full": "攻城奇才布阵占城游戏软件V1.0",
+      "status": "软著材料V1.0",
+      "privacy_cn": "https://www.mengstone.com/privacy/siege-prodigy/",
+      "privacy_en": "https://www.mengstone.com/en/privacy/siege-prodigy/",
+      "screenshots": "copyright_materials/攻城奇才/shots",
+      "source": "C:/Users/admin/Downloads/ai_game/copyright_materials/攻城奇才"
+    },
+    {
+      "slug": "squirrel-cabin",
+      "name": "松鼠小屋",
+      "full": "松鼠小屋：田园放置养成游戏软件V1.0",
+      "status": "软著材料V1.0",
+      "privacy_cn": "https://www.mengstone.com/privacy/squirrel-cabin/",
+      "privacy_en": "https://www.mengstone.com/en/privacy/squirrel-cabin/",
+      "screenshots": "copyright_materials/松鼠小屋/shots",
+      "source": "C:/Users/admin/Downloads/ai_game/copyright_materials/松鼠小屋"
+    },
+    {
+      "slug": "cat-raising",
+      "name": "百变猫咪养成计划",
+      "full": "百变猫咪养成计划游戏软件V1.0",
+      "status": "软著材料V1.0",
+      "privacy_cn": "https://www.mengstone.com/privacy/cat-raising/",
+      "privacy_en": "https://www.mengstone.com/en/privacy/cat-raising/",
+      "screenshots": "copyright_materials/百变猫咪养成计划/shots",
+      "source": "C:/Users/admin/Downloads/ai_game/copyright_materials/百变猫咪养成计划"
+    }
+  ]
+}
