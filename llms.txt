@@ -6,9 +6,9 @@
 - https://www.mengstone.com/
 
 ## 在研原型
-- 霓虹浪人（XG-001，动作/赛博，战斗原型内部测试）：https://www.mengstone.com/item/neon-ronin/
-- 石界旅者（XG-002，解谜/极简，12 关设计完成）：https://www.mengstone.com/item/stone-voyager/
-- 像素信使（XG-003，跑酷/轻叙事，核心循环）：https://www.mengstone.com/item/pixel-courier/
+- 霓虹浪人（XG-001，动作/赛博，战斗原型内部测试）：https://www.mengstone.com/item/siege-prodigy/
+- 石界旅者（XG-002，解谜/极简，12 关设计完成）：https://www.mengstone.com/item/squirrel-cabin/
+- 像素信使（XG-003，跑酷/轻叙事，核心循环）：https://www.mengstone.com/item/cat-raising/
 
 ## 工作室
 - 北京 · 萌石科技
